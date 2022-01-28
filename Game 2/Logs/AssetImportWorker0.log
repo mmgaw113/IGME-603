@@ -412,3 +412,36 @@ Received Import Request.
 Start importing Assets/Sprites/Syringe.png using Guid(dcaa39789a7a62048be3ea0e80dc0ab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '212278b57c1563b756b255dadb1a9a61') in 0.010216 seconds 
   Import took 0.014188 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 203.331580 seconds.
+  path: Assets/Scenes/SpriteTest.unity
+  artifactKey: Guid(1debe7a2b90318c4e9a6d2be9897cf3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SpriteTest.unity using Guid(1debe7a2b90318c4e9a6d2be9897cf3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a9c1d0250b1a145519afe56cac0cb81') in 0.002327 seconds 
+  Import took 0.007067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.363421 seconds.
+  path: Assets/Sprites/Pill_Collectable.png
+  artifactKey: Guid(ea8047f786e99134ab1ccd4cc2cc183c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Pill_Collectable.png using Guid(ea8047f786e99134ab1ccd4cc2cc183c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7738ac4565692392f611db1486938de') in 0.017325 seconds 
+  Import took 0.020494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/Sprites/Syringe.png
+  artifactKey: Guid(dcaa39789a7a62048be3ea0e80dc0ab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Syringe.png using Guid(dcaa39789a7a62048be3ea0e80dc0ab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba5797ffebd3bf6cf9b60006c7351445') in 0.007566 seconds 
+  Import took 0.011002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/Sprites/Player.png
+  artifactKey: Guid(7831c21a5193009419e04d256878ce25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player.png using Guid(7831c21a5193009419e04d256878ce25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '022203e83a01a9e8cd9a40c99fd83705') in 0.013687 seconds 
+  Import took 0.017699 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
