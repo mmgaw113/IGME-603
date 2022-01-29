@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 9858703}
   - component: {fileID: 9858702}
   - component: {fileID: 9858705}
+  - component: {fileID: 9858706}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -201,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9858701}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.15, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -241,6 +242,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9858706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9858701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f9ea71681d0fc4d8075cbfeddd723f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postMat: {fileID: 2100000, guid: eacc73bf29cb2af4baafd4f00e792148, type: 2}
 --- !u!1 &183874112
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,8 +441,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621735713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.94, y: -0.75, z: 0}
-  m_LocalScale: {x: 4.2283, y: 1, z: 1}
+  m_LocalPosition: {x: -4.0143, y: -0.75, z: 0}
+  m_LocalScale: {x: 8.079859, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -789,5 +803,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartSpot
       objectReference: {fileID: 0}
+    - target: {fileID: 7670542252653020475, guid: 3fe8fe5c14b1fed4e9739d1d7828105a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe8fe5c14b1fed4e9739d1d7828105a, type: 3}
