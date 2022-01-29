@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class ZombieCameraScript : MonoBehaviour
 {
-
     public Material postMat;
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
@@ -18,11 +17,7 @@ public class ZombieCameraScript : MonoBehaviour
     void Start()
     {
         //postMat = new Material(postMat);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
