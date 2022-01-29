@@ -10,6 +10,7 @@ public class CharacterController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Transform groundCheckTransform;
+    private bool flipX = false;
     
 
     // Start is called before the first frame update
@@ -29,7 +30,12 @@ public class CharacterController : MonoBehaviour
         // changes the player's velocity for movement and jumping
         rb.velocity = rb.velocity + new Vector2(movement * speed - rb.velocity.x, jump ? jumpForce : 0);
 
+        if (flipX && rb.velocity.x > 0 || !flipX && rb.velocity.x < 0)
+        {
+            flipX = !flipX;
+        }
 
+        GetComponent<SpriteRenderer>().flipX = flipX;
     }
 
 }
