@@ -6,20 +6,37 @@ public class CharacterController : MonoBehaviour
 {
     public float speed = 10f;
     public float jumpForce = 10f;
-    private float movement;
+    public LayerMask groundMask;
+
+    private Rigidbody2D rb;
+    private Transform groundCheckTransform;
+    private bool flipX = false;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        groundCheckTransform = gameObject.transform.GetChild(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-       movement = Input.GetAxisRaw("Horizontal");
+        // gets the inputs we need
+        float movement = Input.GetAxisRaw("Horizontal");
+        bool jump = Input.GetButtonDown("Jump") && Physics2D.OverlapCircle(groundCheckTransform.position, 0.25f, groundMask);
+
+        // changes the player's velocity for movement and jumping
+        rb.velocity = rb.velocity + new Vector2(movement * speed - rb.velocity.x, jump ? jumpForce : 0);
+
+        if (flipX && rb.velocity.x > 0 || !flipX && rb.velocity.x < 0)
+        {
+            flipX = !flipX;
+        }
+
+        GetComponent<SpriteRenderer>().flipX = flipX;
     }
-    private void FixedUpdate()
-    {
-        transform.position += new Vector3(movement * speed * Time.deltaTime,0 ,0);
-    }
+
 }
+
