@@ -20,12 +20,13 @@ public class pausemenu : MonoBehaviour
             else
             {
                 pause();
-                    }
+            }
         }
 
     }
     public void resume()
     {
+        Debug.Log("Got here");
         pausemenuui.SetActive(false);
         Time.timeScale = 1f;
         gameispaused = false;
