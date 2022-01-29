@@ -25,7 +25,7 @@ public class CharacterController : MonoBehaviour
     {
         // gets the inputs we need
         float movement = Input.GetAxisRaw("Horizontal");
-        bool jump = Input.GetButtonDown("Jump") && Physics2D.OverlapCircle(groundCheckTransform.position, 0.35f, groundMask);
+        bool jump = Input.GetButtonDown("Jump") && Physics2D.OverlapCircle(groundCheckTransform.position, 0.25f, groundMask);
 
         // changes the player's velocity for movement and jumping
         rb.velocity = rb.velocity + new Vector2(movement * speed - rb.velocity.x, jump ? jumpForce : 0);
