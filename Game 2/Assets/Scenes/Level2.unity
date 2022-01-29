@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   postMat: {fileID: 2100000, guid: eacc73bf29cb2af4baafd4f00e792148, type: 2}
+  infection: 1
 --- !u!1 &152983115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,6 +2176,10 @@ PrefabInstance:
     - target: {fileID: 4002665824875700623, guid: 3faa1691e86ef6546819e1ac2f8ae710, type: 3}
       propertyPath: m_Name
       value: exitSpot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002665824875700625, guid: 3faa1691e86ef6546819e1ac2f8ae710, type: 3}
+      propertyPath: nextScene
+      value: Menuscene
       objectReference: {fileID: 0}
     - target: {fileID: 4002665824875700627, guid: 3faa1691e86ef6546819e1ac2f8ae710, type: 3}
       propertyPath: m_RootOrder
