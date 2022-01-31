@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3816891774477718751}
   m_Layer: 0
   m_Name: Collectable_Pills
-  m_TagString: Untagged
+  m_TagString: Pills
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

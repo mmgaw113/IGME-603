@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f9ea71681d0fc4d8075cbfeddd723f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postMat: {fileID: 2098695348}
+  postMat: {fileID: 1938842759}
   infection: 0
 --- !u!1 &161335764
 GameObject:
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 201794028}
   m_Layer: 0
   m_Name: Syringe (2)
-  m_TagString: Untagged
+  m_TagString: Vaccine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee14199a494334d4a8f6679f8d37f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionRate: {fileID: 0}
 --- !u!212 &201794026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -589,7 +590,7 @@ GameObject:
   - component: {fileID: 571703360}
   m_Layer: 0
   m_Name: Pill_Collectable (2)
-  m_TagString: Untagged
+  m_TagString: Pills
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee14199a494334d4a8f6679f8d37f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionRate: {fileID: 0}
 --- !u!212 &571703358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1038,7 +1040,7 @@ GameObject:
   - component: {fileID: 1020197924}
   m_Layer: 0
   m_Name: Pill_Collectable (1)
-  m_TagString: Untagged
+  m_TagString: Pills
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1055,6 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee14199a494334d4a8f6679f8d37f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionRate: {fileID: 0}
 --- !u!212 &1020197922
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1269,7 +1272,7 @@ GameObject:
   - component: {fileID: 1398565606}
   m_Layer: 0
   m_Name: Syringe (3)
-  m_TagString: Untagged
+  m_TagString: Vaccine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,6 +1289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee14199a494334d4a8f6679f8d37f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionRate: {fileID: 0}
 --- !u!212 &1398565604
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1517,6 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee14199a494334d4a8f6679f8d37f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionRate: {fileID: 0}
 --- !u!212 &1594135638
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1731,7 +1736,7 @@ GameObject:
   - component: {fileID: 1739621011}
   m_Layer: 0
   m_Name: Pill_Collectable
-  m_TagString: Untagged
+  m_TagString: Pills
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1748,6 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee14199a494334d4a8f6679f8d37f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionRate: {fileID: 0}
 --- !u!212 &1739621009
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1853,7 +1859,7 @@ GameObject:
   - component: {fileID: 1742163644}
   m_Layer: 0
   m_Name: Syringe (1)
-  m_TagString: Untagged
+  m_TagString: Vaccine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1870,6 +1876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee14199a494334d4a8f6679f8d37f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infectionRate: {fileID: 0}
 --- !u!212 &1742163642
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2027,7 +2034,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &2098695348
+--- !u!21 &1938842759
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -2090,7 +2097,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Infection: 1
+    - _Infection: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
