@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Vaccine
   - Pills
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
