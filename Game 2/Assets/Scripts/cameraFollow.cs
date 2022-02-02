@@ -38,6 +38,9 @@ public class cameraFollow : MonoBehaviour
             dummyPos = Vector2.Lerp(dummyPos, player.position, Time.deltaTime * cameraSpeed);
             dummyPos.z = -8;
             transform.position = dummyPos;
+
+            // update the infection shader
+            GetComponent<ZombieCameraScript>().infection = player.GetComponent<InfectionRate>().currentInfection / 100;
         }
     }
 }
