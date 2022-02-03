@@ -20,7 +20,7 @@ public class InfectionRate : MonoBehaviour
         if(currentInfection < 100)
         {
             currentInfection += rate * Time.deltaTime;
-            text.text = "Inefection: " + Mathf.Round(currentInfection) + "%";
+            //text.text = "Inefection: " + Mathf.Round(currentInfection) + "%";
         }
         else
         {
