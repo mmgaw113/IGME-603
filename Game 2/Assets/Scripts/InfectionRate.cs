@@ -25,7 +25,7 @@ public class InfectionRate : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Game Over");
+            SceneManager.LoadScene("MenuScene 1");
         }
     }
 }

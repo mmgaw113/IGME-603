@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    [SerializeField] private InfectionRate infectionRate;
+    public InfectionRate infectionRate;
     // Start is called before the first frame update
     void Start()
     {
-        //get infection rate script
-        infectionRate = GameObject.FindGameObjectWithTag("Player").GetComponent<InfectionRate>();
+
     }
 
     // Update is called once per frame
