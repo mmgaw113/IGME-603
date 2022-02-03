@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InfectionRate : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class InfectionRate : MonoBehaviour
         }
         else
         {
-            Debug.Log("Player Died");
+            SceneManager.LoadScene("Game Over");
         }
     }
 }
