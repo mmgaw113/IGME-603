@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public float waitTime;
     public LayerMask mask;
     public float speed;
+    public float damage;
 
     private void Start()
     {
@@ -53,7 +54,6 @@ public class EnemyController : MonoBehaviour
         RaycastHit2D LeftHit = Physics2D.Raycast(transform.position, -Vector2.right, 20, mask);
         if (LeftHit.point != new Vector2(0, 0))
         {
-            print("Left!");
             int LeftHitLayer = LeftHit.transform.gameObject.layer;
             if (LeftHitLayer == 3 || LeftHitLayer == 7)
             {
@@ -69,6 +69,28 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (infected == 2)
+        {
+            if (collision.transform.tag == "Enemy")
+            {
+                collision.transform.GetComponent<EnemyController>().InfectNow();
+            }
+            if (collision.transform.tag == "Player")
+            {
+                collision.transform.GetComponent<InfectionRate>().currentInfection += damage;
+            }
+        }
+    }
+
+    public void InfectNow()
+    {
+        // become zombie
+        infected = 2;
+        spriteRenderer.color = Color.green;
+        gameObject.layer = 6;
+    }
 
     private void waitInfection()
     {
@@ -78,10 +100,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            // become zombie
-            infected = 2;
-            spriteRenderer.color = Color.green;
-            gameObject.layer = 6;
+            InfectNow();
         }
     }
 
