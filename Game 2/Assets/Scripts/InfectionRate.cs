@@ -8,11 +8,11 @@ public class InfectionRate : MonoBehaviour
 {
     public float rate = 0.5f;
     public float currentInfection = 1;
-    //public TextMeshProUGUI text;
+    public TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
-        
+        text= GameObject.Find("HealthUI").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class InfectionRate : MonoBehaviour
         if(currentInfection < 100)
         {
             currentInfection += rate * Time.deltaTime;
-            //text.text = "Inefection: " + Mathf.Round(currentInfection) + "%";
+            text.text = "Inefection: " + Mathf.Round(currentInfection) + "%";
         }
         else
         {
