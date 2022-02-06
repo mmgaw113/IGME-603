@@ -14,6 +14,8 @@ public class CharacterController : MonoBehaviour
     private Transform hip;
     private Transform gun;
     private bool flipX = false;
+
+    private Animator anim;
     
 
     // Start is called before the first frame update
@@ -24,6 +26,8 @@ public class CharacterController : MonoBehaviour
 
         hip = gameObject.transform.GetChild(3);
         gun = hip.GetChild(0);
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,6 +44,12 @@ public class CharacterController : MonoBehaviour
 
         // changes the player's velocity for movement and jumping
         rb.velocity = rb.velocity + new Vector2(movement * speed - rb.velocity.x, jump ? jumpForce : 0);
+
+        //Animation Controlling
+        if (Mathf.Abs(rb.velocity.magnitude) > 0)
+            anim.SetBool("IsWalking", true);
+        else
+            anim.SetBool("IsWalking", false);
 
         if (flipX && rb.velocity.x > 0 || !flipX && rb.velocity.x < 0)
         {

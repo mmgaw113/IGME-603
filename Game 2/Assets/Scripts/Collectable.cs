@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    public InfectionRate infectionRate;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,26 +15,26 @@ public class Collectable : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         //collision
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             //check if Vaccine or Pills
-            if(gameObject.tag == "Vaccine")
+            if(gameObject.CompareTag("Vaccine"))
             {
-                infectionRate.currentInfection = 0;
+                collision.transform.GetComponent<InfectionRate>().currentInfection = 0;
                 Debug.Log("Got");
             }
-            else if (gameObject.tag == "Pills")
+            else if (gameObject.CompareTag("Pills"))
             {
-                if(infectionRate.currentInfection >= 10)
+                if(collision.transform.GetComponent<InfectionRate>().currentInfection >= 10)
                 {
-                    infectionRate.currentInfection -= 10;
+                    collision.transform.GetComponent<InfectionRate>().currentInfection -= 10;
                 }
                 else
                 {
-                    infectionRate.currentInfection = 0;
+                    collision.transform.GetComponent<InfectionRate>().currentInfection = 0;
                 }
                 Debug.Log("Got");
             }

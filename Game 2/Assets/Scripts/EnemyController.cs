@@ -13,11 +13,14 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public float damage;
 
+    private Animator anim;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         infected = 0;
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -31,6 +34,8 @@ public class EnemyController : MonoBehaviour
             // chase the player
             chasePlayer();
         }
+        else
+            anim.SetBool("IsMoving", false);
     }
 
     private void chasePlayer()
@@ -66,7 +71,9 @@ public class EnemyController : MonoBehaviour
         // move toward the target
         if (targetDistance != 0)
             rb.velocity = rb.velocity - Vector2.right * rb.velocity.x + Vector2.right * speed * (targetDistance > 0 ? 1 : -1);
-
+        
+        //Animation
+        anim.SetBool("IsMoving", true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
