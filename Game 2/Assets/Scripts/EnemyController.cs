@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private int infected;
     private Rigidbody2D rb;
+    private float lastTarget;
 
     public float waitTime;
     public LayerMask mask;
@@ -68,12 +69,35 @@ public class EnemyController : MonoBehaviour
         }
 
 
-        // move toward the target
         if (targetDistance != 0)
+        {
+            // move toward the target
             rb.velocity = rb.velocity - Vector2.right * rb.velocity.x + Vector2.right * speed * (targetDistance > 0 ? 1 : -1);
+            
+            // flip the sprite
+            spriteRenderer.flipX = targetDistance < 0;
+
+            // save the last location of the target
+            lastTarget = targetDistance > 1 ? 10 : -10;
+        }
+        else if (lastTarget != 0)
+        {
+            // move toward the last target
+            rb.velocity = rb.velocity - Vector2.right * rb.velocity.x + Vector2.right * speed * (lastTarget > 0 ? 1 : -1);
+
+            // flip the sprite
+            spriteRenderer.flipX = lastTarget < 0;
+
+            // reduces the last target float
+            lastTarget -= (lastTarget > 0 ? 1 : -1) * Time.deltaTime;
+            if (Mathf.Abs(lastTarget) < 0.05)
+                lastTarget = 0;
+        }
+
         
-        //Animation
-        anim.SetBool("IsMoving", true);
+        // animation
+        anim.SetBool("IsMoving", targetDistance != 0 || lastTarget != 0);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -94,6 +118,7 @@ public class EnemyController : MonoBehaviour
     public void InfectNow()
     {
         // become zombie
+        GetComponent<ParticleSystem>().Stop();
         infected = 2;
         spriteRenderer.color = Color.green;
         gameObject.layer = 6;
@@ -115,6 +140,7 @@ public class EnemyController : MonoBehaviour
     {
         if (infected == 0)
         {
+            GetComponent<ParticleSystem>().Play();
             infected = 1;
             Debug.Log("Success");
         }

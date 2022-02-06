@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    private ZombieCameraScript cameraScript;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        cameraScript = Camera.main.gameObject.GetComponent<ZombieCameraScript>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         //collision
@@ -38,6 +36,10 @@ public class Collectable : MonoBehaviour
                 }
                 Debug.Log("Got");
             }
+
+            // shader effect
+            cameraScript.setPickup(transform.position);
+
             Destroy(gameObject);
         }
     }
