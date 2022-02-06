@@ -49,11 +49,17 @@ Shader "Hidden/zombieVision"
             {
                 if (_ShockWave.w == 1)
                 {
+                    // correct the vertex y position
                     vertex.y = _MainTex_TexelSize.w - vertex.y;
+
+                    // effect scales to the screen size
                     int2 screen_size = int2(_MainTex_TexelSize.y, _MainTex_TexelSize.w);
+
+                    // finds the distance from the epicenter of the effect
                     float2 pixels_from_center = vertex - float2(_ShockWave.x, _ShockWave.y);
                     float dist_from_center = length(pixels_from_center);
 
+                    // 
                     int radius = 100;
                     int wave_peak = _ShockWave.z * radius;
 
@@ -62,7 +68,7 @@ Shader "Hidden/zombieVision"
                     float distance_to_displace = 0;
                     if (distance_from_wave > 0 && distance_from_wave < wave_length)
                     {
-                        distance_to_displace += (1 - pow(((distance_from_wave / wave_length) - 0.5) * 2, 2)) / max(100 * _ShockWave.z, 20);
+                        distance_to_displace += (1 - pow(((distance_from_wave / wave_length) - 0.5) * 2, 2)) * (1 - _ShockWave.z) / 20;
                     }
 
                     float2 disp_uv = normalize(uv - float2(0.5, 0.5)) * distance_to_displace;
