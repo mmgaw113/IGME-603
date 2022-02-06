@@ -595,6 +595,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1401654386 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7775422348432259271, guid: 2a414f493bd327043a15c2ef469273c3, type: 3}
+  m_PrefabInstance: {fileID: 7775422349405075322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1422220291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,6 +2984,26 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 60933977}
+    - target: {fileID: -8880109624787636645, guid: 2a414f493bd327043a15c2ef469273c3, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1401654386}
+    - target: {fileID: -8880109624787636645, guid: 2a414f493bd327043a15c2ef469273c3, type: 3}
+      propertyPath: gradient.atime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8880109624787636645, guid: 2a414f493bd327043a15c2ef469273c3, type: 3}
+      propertyPath: gradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8880109624787636645, guid: 2a414f493bd327043a15c2ef469273c3, type: 3}
+      propertyPath: gradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8880109624787636645, guid: 2a414f493bd327043a15c2ef469273c3, type: 3}
+      propertyPath: gradient.key1.r
+      value: 0.025627613
+      objectReference: {fileID: 0}
     - target: {fileID: 7775422348432259266, guid: 2a414f493bd327043a15c2ef469273c3, type: 3}
       propertyPath: m_RootOrder
       value: 1

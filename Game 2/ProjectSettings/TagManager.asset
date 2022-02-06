@@ -7,6 +7,8 @@ TagManager:
   - Vaccine
   - Pills
   - Enemy
+  - Bullet
+  - UI
   layers:
   - Default
   - TransparentFX

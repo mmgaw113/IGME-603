@@ -36,6 +36,10 @@ public class Collectable : MonoBehaviour
                 }
                 Debug.Log("Got");
             }
+            else if (gameObject.CompareTag("Bullet"))
+            {
+                collision.transform.GetComponent<CharacterController>().ammoCount += 1;
+            }
 
             // shader effect
             cameraScript.setPickup(transform.position);

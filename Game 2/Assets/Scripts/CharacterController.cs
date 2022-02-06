@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CharacterController : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class CharacterController : MonoBehaviour
 
     private Animator anim;
     
-
+    public int ammoCount = 5;
+    public TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class CharacterController : MonoBehaviour
         gun = hip.GetChild(0);
 
         anim = GetComponent<Animator>();
+        text = GameObject.Find("Ammo Count").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -36,12 +39,12 @@ public class CharacterController : MonoBehaviour
         // gets the inputs we need
         float movement = Input.GetAxisRaw("Horizontal");
         bool jump = Input.GetButtonDown("Jump") && Physics2D.OverlapCircle(groundCheckTransform.position, 0.25f, groundMask);
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && ammoCount > 0)
         {
             shoot();
         }
 
-
+        text.text = "Ammo: " + ammoCount;
         // changes the player's velocity for movement and jumping
         rb.velocity = rb.velocity + new Vector2(movement * speed - rb.velocity.x, jump ? jumpForce : 0);
 
@@ -65,6 +68,7 @@ public class CharacterController : MonoBehaviour
     {
         print("Bang!");
         Instantiate(bullet, gun.position, gun.rotation).GetComponent<bullet>().left = flipX;
+        --ammoCount;
     }
 
 }
